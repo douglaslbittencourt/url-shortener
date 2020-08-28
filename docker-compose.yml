@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    container_name: url-shortener
+    image: douglaslbittencourt/url-shortener
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/senior
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: db
+    ports:
+      - 5000:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=senior
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - sample_db:/var/lib/postgresql/data
+    restart: always
+volumes:
+  sample_db:
