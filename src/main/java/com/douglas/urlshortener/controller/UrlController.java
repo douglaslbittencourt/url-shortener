@@ -32,14 +32,14 @@ public class UrlController {
 	public ResponseEntity<?> getShortenUrl(@RequestBody UrlLonger longUrl, UriComponentsBuilder uriBuilder) {
 		try {
 			String shorterUrl = service.convertoToShortUrl(longUrl.getUrl());
-			return ResponseEntity.ok().body(uriBuilder.toUriString() + '/' + shorterUrl);
+			return ResponseEntity.ok().body(uriBuilder.toUriString() + "/r/" + shorterUrl);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@ApiOperation(value = "Redirect", notes = "Finds original url from short url and redirects")
-	@GetMapping(value = "/{shortUrl}")
+	@GetMapping(value = "/r/{shortUrl}")
 	public void getFullUrlAndRedirect(@PathVariable String shortUrl, HttpServletResponse response) {
 		try {
 			String fullUrl = service.convertToLongUrl(shortUrl);
