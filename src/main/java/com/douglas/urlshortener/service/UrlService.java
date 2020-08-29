@@ -30,6 +30,7 @@ public class UrlService {
 		return url.getShortUrl();
 	}
 	
+	@Transactional(readOnly = true)
 	public String convertToLongUrl(String shortUrl) {
 		Url url = repository.findByShortUrl(shortUrl);
 		
