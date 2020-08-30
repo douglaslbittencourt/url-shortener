@@ -31,7 +31,7 @@ public class UrlController {
 	@PostMapping(value = "/shortenUrl")
 	public ResponseEntity<?> getShortenUrl(@RequestBody UrlLonger longUrl, UriComponentsBuilder uriBuilder) {
 		try {
-			String shorterUrl = service.convertoToShortUrl(longUrl.getUrl());
+			String shorterUrl = service.convertToShortUrl(longUrl.getUrl());
 			return ResponseEntity.ok().body(uriBuilder.toUriString() + "/r/" + shorterUrl);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

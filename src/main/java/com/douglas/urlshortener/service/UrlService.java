@@ -15,7 +15,7 @@ public class UrlService {
 	UrlRepository repository;
 	
 	@Transactional
-	public String convertoToShortUrl(String longUrl) {
+	public String convertToShortUrl(String longUrl) {
 		Url url = repository.findByLongUrl(longUrl);
 		
 		if (url != null) {
@@ -26,8 +26,7 @@ public class UrlService {
 		url.setLongUrl(longUrl);
 		url.setShortUrl(RandomStringUtils.random(6,true,true));
 		
-		repository.save(url);
-		return url.getShortUrl();
+		return repository.save(url).getShortUrl();
 	}
 	
 	@Transactional(readOnly = true)
