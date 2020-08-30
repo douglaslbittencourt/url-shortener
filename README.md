@@ -1,6 +1,6 @@
 # UrlShortener
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/45cfeb44822d09972ef7/maintainability)](https://codeclimate.com/github/douglaslbittencourt/UrlShortener-API)
+[![Maintainability](https://api.codeclimate.com/v1/badges/45cfeb44822d09972ef7/maintainability)](https://codeclimate.com/github/douglaslbittencourt/url-shortener)
 
 
 Esta é uma API para serviço de encurtador de url.
