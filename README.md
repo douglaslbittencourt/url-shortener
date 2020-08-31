@@ -9,7 +9,7 @@ O Encurtador de url é um serviço que converte url longas para url menores, ass
 
 # Teste de escalabilidade
 
-Para realizar o teste de escalabilidade foi utilizada a ferramenta Jmetter, realizando 150 chamadas para a primitiva `shortenUrl`, sendo realizados de 2 a 4 segundos no total, o arquivo de teste esta na raiz do projeto `AIP.jmx`
+Para realizar o teste de escalabilidade foi utilizada a ferramenta Jmetter, realizando 150 chamadas para a primitiva `shortenUrl`, sendo realizados de 2 a 4 segundos no total, o arquivo de teste esta na raiz do projeto `API.jmx`
 
 # Como usar 
 
